@@ -128,18 +128,43 @@ h2 {
   transform: scale(1.05);
 }
 
-/* Projects */
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem; /* space between cards */
+}
+
+/* Project Card */
 .project-card {
   border: 2px solid #111;
   border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px; /* roughly square */
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  flex-grow: 1; /* description fills vertical space */
+}
+
 .project-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.project-links {
+  margin-top: 0.5rem;
 }
 
 .project-links a {
@@ -179,16 +204,16 @@ h2 {
 
 /* Blinking Cursor */
 .blinking-cursor {
-    font-weight: 400;
-    color: #00C1D4; /* accent color */
-    animation: blink 1s step-end infinite;
+  font-weight: 400;
+  color: #00C1D4; /* accent color */
+  animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
-    from, to {
-        color: transparent;
-    }
-    50% {
-        color: #00C1D4;
-    }
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #00C1D4;
+  }
 }
