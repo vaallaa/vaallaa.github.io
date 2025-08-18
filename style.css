@@ -20,14 +20,14 @@ a:hover {
 /* Header */
 .header {
   display: flex;
-  justify-content: space-between; /* keep logo left, nav right */
-  align-items: center;           /* vertically center items */
+  align-items: center; /* vertically center logo and nav */
   padding: 1.5rem 3rem;
   position: sticky;
   top: 0;
   background: #fff;
   z-index: 10;
   border-bottom: 2px solid #111;
+  gap: 2rem; /* space between logo and nav links */
 }
 
 /* Logo */
@@ -39,8 +39,8 @@ a:hover {
 
 /* Nav links */
 .nav {
-  display: flex;           /* align links horizontally */
-  gap: 2rem;               /* space between links */
+  display: flex;   /* horizontal layout for links */
+  gap: 1.5rem;    /* space between each link */
 }
 
 .nav a {
