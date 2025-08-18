@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Press Start 2P', cursive;
-  background: #f9f6f2; /* warm white */
+  background: #ffffff; /* pure white */
   color: #111;
   line-height: 1.6;
 }
@@ -33,10 +33,11 @@ a:hover {
   top: 0;
   width: 100%;
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   display: flex;
   align-items: center;
   z-index: 10;
+  border-bottom: 2px solid #eee;
 }
 
 .nav-left {
@@ -73,7 +74,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, #f9f6f2 40%, #eae6df);
+  background: #ffffff;
 }
 
 .hero h1 {
@@ -152,7 +153,7 @@ a:hover {
 }
 
 .photo {
-  background: #ddd;
+  background: #f9f9f9;
   height: 150px;
   display: flex;
   align-items: center;
@@ -182,6 +183,6 @@ a:hover {
 footer {
   text-align: center;
   padding: 1rem;
-  background: #eee;
+  background: #f9f9f9;
   color: #555;
 }
