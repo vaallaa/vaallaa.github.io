@@ -1,9 +1,9 @@
 /* Base */
 body {
   margin: 0;
-  font-family: "Space Grotesk", Arial, sans-serif;
-  background: #0d0d0d;
-  color: #f2f2f2;
+  font-family: 'Press Start 2P', cursive;
+  background: #f9f6f2; /* warm white */
+  color: #111;
   line-height: 1.6;
 }
 
@@ -19,12 +19,12 @@ h1, h2, h3 {
 }
 
 a {
-  color: #00b8d9;
+  color: #00b8d9; /* blue accent */
   text-decoration: none;
 }
 
 a:hover {
-  color: #ff6b35;
+  color: #ff6b35; /* orange accent */
 }
 
 /* Navbar */
@@ -33,11 +33,21 @@ a:hover {
   top: 0;
   width: 100%;
   padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   display: flex;
-  justify-content: space-between;
   align-items: center;
   z-index: 10;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1.2rem;
+  color: #ff6b35;
 }
 
 .nav-links {
@@ -47,12 +57,12 @@ a:hover {
 }
 
 .nav-links a {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   transition: 0.3s;
 }
 
 .nav-links a:hover {
-  color: #ff6b35;
+  color: #00b8d9;
 }
 
 /* Hero */
@@ -63,34 +73,43 @@ a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, #000000 40%, #1a1a1a);
+  background: linear-gradient(135deg, #f9f6f2 40%, #eae6df);
 }
 
 .hero h1 {
-  font-size: 3rem;
-  color: #fff;
+  font-size: 1.5rem;
+  color: #111;
+  margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  color: #bbb;
+  font-size: 0.8rem;
+  color: #333;
 }
 
-/* Glitch effect */
-.glitch {
-  position: relative;
-  color: #fff;
-  font-size: 3rem;
-  animation: glitch 1s infinite;
+/* Typewriter */
+.typewriter, .typewriter-sub {
+  overflow: hidden;
+  border-right: .15em solid #ff6b35;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .05em;
+  animation: typing 3s steps(30, end), blink-caret .7s step-end infinite;
 }
 
-@keyframes glitch {
-  0% { text-shadow: 2px 2px #00b8d9, -2px -2px #ff6b35; }
-  20% { text-shadow: -2px -2px #00b8d9, 2px 2px #ff6b35; }
-  40% { text-shadow: 2px -2px #00b8d9, -2px 2px #ff6b35; }
-  60% { text-shadow: -2px 2px #00b8d9, 2px -2px #ff6b35; }
-  80% { text-shadow: 2px 2px #00b8d9, -2px -2px #ff6b35; }
-  100% { text-shadow: -2px -2px #00b8d9, 2px 2px #ff6b35; }
+.typewriter-sub {
+  animation-delay: 3.2s;
+  border-right: .15em solid #00b8d9;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #ff6b35 }
 }
 
 /* Projects Grid */
@@ -101,16 +120,22 @@ a:hover {
 }
 
 .card {
-  background: #1a1a1a;
+  background: #fff;
   padding: 1.5rem;
   border-radius: 12px;
-  transition: transform 0.3s, background 0.3s;
+  border: 2px solid #ddd;
+  transition: transform 0.3s, border 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  background: rgba(255, 107, 53, 0.1);
-  border: 1px solid #ff6b35;
+  border: 2px solid #00b8d9;
+}
+
+/* Section Titles */
+.accent {
+  color: #ff6b35;
+  margin-bottom: 2rem;
 }
 
 /* Skills */
@@ -127,20 +152,20 @@ a:hover {
 }
 
 .photo {
-  background: #333;
+  background: #ddd;
   height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #999;
+  color: #444;
   border-radius: 10px;
-  border: 1px solid #444;
+  border: 2px dashed #00b8d9;
 }
 
 .placeholder {
   margin-top: 1rem;
   text-align: center;
-  color: #666;
+  color: #888;
 }
 
 /* Contact */
@@ -157,6 +182,6 @@ a:hover {
 footer {
   text-align: center;
   padding: 1rem;
-  background: #111;
+  background: #eee;
   color: #555;
 }
