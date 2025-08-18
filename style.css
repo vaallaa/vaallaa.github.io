@@ -52,6 +52,7 @@ a:hover {
   height: 80vh;
   background: linear-gradient(160deg, #00C1D4 0%, #FF6600 100%);
   color: #fff;
+  padding: 0 1rem;
 }
 
 .hero .main-title {
@@ -64,6 +65,21 @@ a:hover {
 .hero .tagline {
   font-size: 1.25rem;
   max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.cta {
+  padding: 0.8rem 1.5rem;
+  background-color: #00C1D4;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.cta:hover {
+  background-color: #FF6600;
+  transform: scale(1.05);
 }
 
 /* Sections */
@@ -147,4 +163,20 @@ h2 {
   border-top: 2px solid #111;
   text-align: center;
   font-size: 0.9rem;
+}
+
+/* Blinking Cursor */
+.blinking-cursor {
+    font-weight: 400;
+    color: #00C1D4; /* accent color */
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #00C1D4;
+    }
 }
