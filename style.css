@@ -20,8 +20,8 @@ a:hover {
 /* Header */
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* keep logo left, nav right */
+  align-items: center;           /* vertically center items */
   padding: 1.5rem 3rem;
   position: sticky;
   top: 0;
@@ -30,16 +30,28 @@ a:hover {
   border-bottom: 2px solid #111;
 }
 
+/* Logo */
 .logo {
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
+/* Nav links */
+.nav {
+  display: flex;           /* align links horizontally */
+  gap: 2rem;               /* space between links */
+}
+
 .nav a {
-  margin-left: 2rem;
   font-weight: 600;
   letter-spacing: 0.5px;
+  color: #00C1D4;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #FF6600;
 }
 
 /* Hero */
