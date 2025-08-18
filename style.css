@@ -28,11 +28,54 @@ body {
   font-size: 16px;
   line-height: 1.6;
   padding: 2rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* --- BACKGROUND EFFECTS --- */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(8, 145, 178, 0.05), transparent 70%),
+              radial-gradient(circle at top left, rgba(255, 107, 53, 0.05), transparent 70%);
+  animation: backgroundMove 20s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes backgroundMove {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(20px, 20px); }
+  100% { transform: translate(0, 0); }
 }
 
 .container {
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 h1, h2, h3 {
@@ -87,7 +130,7 @@ a:hover {
   font-size: 2.5rem;
   color: var(--white);
   margin-bottom: 1rem;
-  text-shadow: 0 0 12px var(--teal);
+  text-shadow: 0 0 12px var(--teal), 0 0 24px rgba(8,145,178,0.5);
 }
 
 .tagline {
@@ -106,6 +149,7 @@ a:hover {
   border-bottom: 2px solid var(--teal);
   display: inline-block;
   padding-bottom: 0.25rem;
+  text-shadow: 0 0 6px var(--teal);
 }
 
 /* --- SKILLS --- */
@@ -138,17 +182,36 @@ a:hover {
   padding: 1.5rem;
   margin-bottom: 2rem;
   border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,107,53,0.1), transparent);
+  transition: all 0.5s ease;
+}
+
+.project-card:hover::after {
+  left: 100%;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 15px var(--teal);
+  border-color: var(--teal);
 }
 
 .project-card h3 {
   color: var(--orange);
   margin-bottom: 0.75rem;
+  text-shadow: 0 0 6px rgba(255,107,53,0.6);
 }
 
 .project-links a {
@@ -167,11 +230,12 @@ a:hover {
   border-radius: 6px;
   transition: all 0.3s ease;
   margin: 1rem 0;
+  box-shadow: 0 0 10px rgba(255,107,53,0.6);
 }
 
 .contact-button:hover {
   background-color: var(--teal);
-  box-shadow: 0 0 10px var(--teal);
+  box-shadow: 0 0 12px var(--teal);
 }
 
 .social-links a {
