@@ -144,37 +144,31 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
   height: 250px; /* roughly square */
-  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #111; /* dark grey / black background */
+  color: #fff; /* text color for readability */
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
 
-.project-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
-
+.project-card h3,
 .project-card p {
-  font-size: 0.95rem;
-  flex-grow: 1; /* description fills vertical space */
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.project-links {
-  margin-top: 0.5rem;
+  color: #fff; /* ensure all text is visible */
 }
 
 .project-links a {
   margin-right: 1rem;
   font-weight: 600;
   border-bottom: 2px solid #00C1D4;
+  color: #00C1D4; /* link color */
 }
 
 .project-links a:hover {
   border-color: #FF6600;
+  color: #FF6600;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
 /* Contact Button */
