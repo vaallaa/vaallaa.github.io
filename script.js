@@ -1,44 +1,35 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // --- Typewriter Effect ---
-    const titleElement = document.getElementById('main-title');
-    if (titleElement) {
-        const text = titleElement.innerText;
-        titleElement.innerText = '';
-        let i = 0;
-        
-        function typeWriter() {
-            if (i < text.length) {
-                const span = document.createElement('span');
-                span.textContent = text.charAt(i);
-                span.style.opacity = '0';
-                titleElement.appendChild(span);
+// Custom cursor effect
+const cursor = document.querySelector('.cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.top = e.clientY + 'px';
+  cursor.style.left = e.clientX + 'px';
+});
 
-                // Fade-in animation
-                setTimeout(() => {
-                    span.style.transition = 'opacity 0.3s';
-                    span.style.opacity = '1';
-                }, 10);
+// Hover grow effect on cards
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+  });
+  card.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+  });
+});
 
-                i++;
-                setTimeout(typeWriter, 100);
-            } else {
-                const cursor = document.createElement('span');
-                cursor.className = 'blinking-cursor';
-                cursor.textContent = '_';
-                titleElement.appendChild(cursor);
-            }
-        }
-        
-        typeWriter();
+// Fade-in effect on scroll
+const fadeElems = document.querySelectorAll('.projects, .about, .contact');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
     }
+  });
+}, { threshold: 0.2 });
 
-    // Smooth scroll for nav links
-    document.querySelectorAll('.nav a').forEach(link => {
-        link.addEventListener('click', e => {
-            e.preventDefault();
-            document.querySelector(link.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+fadeElems.forEach(el => {
+  el.style.opacity = 0;
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+  observer.observe(el);
 });
