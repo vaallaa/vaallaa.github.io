@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joe — Developer</title>
+  <title>Nikhil Vallakatla — Developer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1 class="logo">Joe</h1>
+    <h1 class="logo">Nikhil Vallakatla</h1>
     <nav>
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
@@ -18,31 +18,44 @@
 
   <main>
     <section class="hero">
-      <p>Hi, I’m Joe.<br>I build software and ideas.</p>
+      <p>Hi, I’m Nikhil.<br>I build software, AI models, and ideas.</p>
     </section>
 
     <section id="projects" class="projects">
       <h2>Projects</h2>
       <div class="grid">
-        <div class="card">Project 1</div>
-        <div class="card">Project 2</div>
-        <div class="card">Project 3</div>
-        <div class="card">Project 4</div>
+        <div class="card" data-project="logging">Tamper-Evident Logging System</div>
+        <div class="card" data-project="lenet">LeNet-5 Neural Network Classifier</div>
+        <div class="card" data-project="sentiment">Sentiment Analysis Reviewer</div>
+        <div class="card" data-project="cnn">Convolutional Pathfinding CNN</div>
+        <div class="card" data-project="probabilistic">Probabilistic Bot</div>
+        <div class="card" data-project="pathfinding">Pathfinding Bot (BFS/A*)</div>
       </div>
     </section>
 
     <section id="about" class="about">
       <h2>About</h2>
-      <p>I’m a developer with a focus on creating clean, minimal, and playful designs.  
-      I love working with new technologies and making ideas come alive.</p>
+      <p>I'm a Computer Science and Philosophy student at Rutgers (Graduating May 2025).  
+         My work spans AI, machine learning, and systems security.  
+         I enjoy applying theory to hands-on projects that solve real problems.</p>
     </section>
 
     <section id="contact" class="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:joe@example.com">joe@example.com</a></p>
+      <p>Email: <a href="mailto:n.vallakatla@gmail.com">n.vallakatla@gmail.com</a></p>
       <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourlinkedin" target="_blank">linkedin.com/in/yourlinkedin</a></p>
     </section>
   </main>
+
+  <!-- Modal Popup -->
+  <div class="modal" id="projectModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <ul id="modalDetails"></ul>
+    </div>
+  </div>
 
   <div class="cursor"></div>
   <script src="script.js"></script>
