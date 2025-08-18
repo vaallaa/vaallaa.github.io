@@ -2,42 +2,42 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: rgb(169,169,169); /* medium gray background */
-  color: #111;
+  background-color: #1C1C1C; /* dark charcoal base */
+  color: #E5E5E5; /* soft light gray text */
   scroll-behavior: smooth;
 }
 
 a {
   text-decoration: none;
-  color: #FF6600; /* base accent orange */
+  color: #FF6600; /* orange default */
   transition: color 0.3s;
 }
 
 a:hover {
-  color: #00C1D4; /* hover teal */
+  color: #00C1D4; /* teal hover */
 }
 
 /* Header */
 .header {
   display: flex;
-  align-items: center; 
+  align-items: center;
+  justify-content: space-between;
   padding: 1.5rem 3rem;
   position: sticky;
   top: 0;
-  background: rgb(169,169,169);
+  background: rgba(28,28,28,0.8); /* translucent dark bar */
+  backdrop-filter: blur(10px);
   z-index: 10;
-  border-bottom: 2px solid #111;
-  gap: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .logo {
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
-  color: #FF6600;
+  color: #E5E5E5;
 }
 
-/* Nav links */
 .nav {
   display: flex;
   gap: 1.5rem;
@@ -47,7 +47,6 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.5px;
   color: #FF6600;
-  transition: color 0.3s;
 }
 
 .nav a:hover {
@@ -62,8 +61,8 @@ a:hover {
   justify-content: center;
   text-align: center;
   height: 80vh;
-  background: linear-gradient(160deg, #FF6600 0%, #00C1D4 100%);
-  color: rgba(169,169,169,0.95); /* text slightly lighter gray for readability */
+  background: linear-gradient(160deg, #1C1C1C 0%, #111 100%);
+  color: #E5E5E5;
   padding: 0 1rem;
 }
 
@@ -78,12 +77,13 @@ a:hover {
   font-size: 1.25rem;
   max-width: 600px;
   margin-bottom: 2rem;
+  color: #CCC;
 }
 
 .cta {
   padding: 0.8rem 1.5rem;
   background-color: #FF6600;
-  color: rgb(169,169,169);
+  color: #fff;
   border-radius: 6px;
   font-weight: 700;
   transition: transform 0.2s, background-color 0.2s;
@@ -98,16 +98,17 @@ a:hover {
 .section {
   padding: 5rem 2rem;
   text-align: center;
-  background-color: rgb(169,169,169);
+  background: rgba(255,255,255,0.05); /* frosted overlay */
+  backdrop-filter: blur(8px);
   border-radius: 12px;
-  margin-bottom: 2rem;
+  margin: 2rem;
 }
 
 h2 {
   font-family: 'Orbitron', sans-serif;
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #111;
+  color: #E5E5E5;
 }
 
 /* Skills */
@@ -119,55 +120,50 @@ h2 {
 }
 
 .skill-tag {
-  border: 2px solid #FF6600;
+  border: 1px solid #FF6600;
   border-radius: 6px;
   padding: 0.5rem 1rem;
   font-weight: 600;
-  transition: transform 0.2s, background-color 0.2s, border-color 0.3s;
-  background-color: rgb(169,169,169);
-  color: #111;
+  color: #FF6600;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .skill-tag:hover {
-  background-color: #00C1D4;
-  color: #fff;
-  border-color: #00C1D4;
+  background-color: #FF6600;
+  color: #111;
   transform: scale(1.05);
 }
 
-/* Projects Grid - calculator style */
+/* Projects Grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem; /* compact spacing like calculator buttons */
-  justify-items: center;
+  gap: 1rem;
 }
 
-/* Project Card - perfect squares, dark grey/black */
+/* Project Card - calculator button style */
 .project-card {
-  border: 2px solid #111;
-  border-radius: 12px;
-  padding: 1rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: #111;
+  color: #fff;
+  aspect-ratio: 1 / 1; /* perfect square */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background-color: #2A3439; /* dark grey / black */
-  color: rgba(255,255,255,0.9);
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-  aspect-ratio: 1 / 1; /* perfect square */
-  width: 100%;
-  max-width: 250px;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .project-card h3,
 .project-card p {
-  color: rgba(255,255,255,0.9);
+  color: #fff;
 }
 
 .project-links a {
-  margin-right: 1rem;
+  margin-top: 0.5rem;
   font-weight: 600;
-  border-bottom: 2px solid #FF6600;
+  border-bottom: 1px solid #FF6600;
   color: #FF6600;
 }
 
@@ -177,8 +173,9 @@ h2 {
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px #00C1D4;
+  border-color: #00C1D4;
 }
 
 /* Contact Button */
@@ -188,7 +185,7 @@ h2 {
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
   background-color: #FF6600;
-  color: rgb(169,169,169);
+  color: #fff;
   font-weight: 700;
   transition: transform 0.2s, background-color 0.2s;
 }
@@ -201,10 +198,10 @@ h2 {
 /* Footer */
 .footer {
   padding: 2rem;
-  border-top: 2px solid #111;
+  border-top: 1px solid rgba(255,255,255,0.1);
   text-align: center;
   font-size: 0.9rem;
-  background-color: rgb(169,169,169);
+  color: #AAA;
 }
 
 /* Blinking Cursor */
@@ -215,10 +212,6 @@ h2 {
 }
 
 @keyframes blink {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: #FF6600;
-  }
+  from, to { color: transparent; }
+  50% { color: #FF6600; }
 }
