@@ -1,8 +1,8 @@
 /* Base */
 body {
   margin: 0;
-  font-family: 'Press Start 2P', cursive;
-  background: #ffffff; /* pure white */
+  font-family: 'Orbitron', Arial, sans-serif; /* more legible */
+  background: #ffffff;
   color: #111;
   line-height: 1.6;
 }
