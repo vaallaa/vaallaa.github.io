@@ -143,11 +143,19 @@ h2 {
   justify-items: center;
 }
 
-/* Project Card - small perfect squares */
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* bigger squares */
+  gap: 0.5rem; /* small gap for tight stacking */
+  justify-items: center;
+}
+
+/* Project Card - bigger perfect squares */
 .project-card {
   border: 2px solid #111;
-  border-radius: 8px;
-  padding: 0.75rem;
+  border-radius: 6px;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -155,26 +163,27 @@ h2 {
   background-color: #2A3439; /* dark grey/black */
   color: rgba(255,255,255,0.9);
   transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-  aspect-ratio: 1 / 1; /* perfect square */
-  width: 150px;
-  height: 150px;
+  aspect-ratio: 1 / 1; /* keeps square shape */
+  width: 200px;
+  height: 200px;
   text-align: center;
 }
 
 .project-card h3 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
 
 .project-card p {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.2;
 }
 
 /* Hover effect - translucent color */
 .project-card:hover {
-  transform: scale(1.08);
+  transform: scale(1.06);
   background-color: rgba(0, 193, 212, 0.6); /* translucent teal */
-  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
 }
 
 .project-links a {
