@@ -2,19 +2,19 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: rgba(255,255,255,0.95); /* soft opaque white background */
+  background-color: rgba(255,255,255,0.85); /* opaque white */
   color: #111;
   scroll-behavior: smooth;
 }
 
 a {
   text-decoration: none;
-  color: #FF6600; /* base accent is orange */
+  color: #FF6600; /* base accent orange */
   transition: color 0.3s;
 }
 
 a:hover {
-  color: #00C1D4; /* hover becomes teal blue */
+  color: #00C1D4; /* hover teal */
 }
 
 /* Header */
@@ -24,18 +24,17 @@ a:hover {
   padding: 1.5rem 3rem;
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.95); /* opaque white header */
+  background: rgba(255,255,255,0.85);
   z-index: 10;
   border-bottom: 2px solid #111;
   gap: 2rem;
 }
 
-/* Logo */
 .logo {
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
-  color: #FF6600; /* logo accent orange */
+  color: #FF6600;
 }
 
 /* Nav links */
@@ -47,12 +46,12 @@ a:hover {
 .nav a {
   font-weight: 600;
   letter-spacing: 0.5px;
-  color: #FF6600; /* orange links */
+  color: #FF6600;
   transition: color 0.3s;
 }
 
 .nav a:hover {
-  color: #00C1D4; /* teal hover */
+  color: #00C1D4;
 }
 
 /* Hero */
@@ -63,7 +62,7 @@ a:hover {
   justify-content: center;
   text-align: center;
   height: 80vh;
-  background: linear-gradient(160deg, #FF6600 0%, #00C1D4 100%); /* swapped gradient */
+  background: linear-gradient(160deg, #FF6600 0%, #00C1D4 100%);
   color: rgba(255,255,255,0.9);
   padding: 0 1rem;
 }
@@ -83,7 +82,7 @@ a:hover {
 
 .cta {
   padding: 0.8rem 1.5rem;
-  background-color: #FF6600; /* base orange */
+  background-color: #FF6600;
   color: rgba(255,255,255,0.95);
   border-radius: 6px;
   font-weight: 700;
@@ -91,7 +90,7 @@ a:hover {
 }
 
 .cta:hover {
-  background-color: #00C1D4; /* hover teal blue */
+  background-color: #00C1D4;
   transform: scale(1.05);
 }
 
@@ -99,7 +98,7 @@ a:hover {
 .section {
   padding: 5rem 2rem;
   text-align: center;
-  background-color: rgba(255,255,255,0.95); /* opaque white sections */
+  background-color: rgba(255,255,255,0.85);
   border-radius: 12px;
   margin-bottom: 2rem;
 }
@@ -120,17 +119,17 @@ h2 {
 }
 
 .skill-tag {
-  border: 2px solid #FF6600; /* orange border */
+  border: 2px solid #FF6600;
   border-radius: 6px;
   padding: 0.5rem 1rem;
   font-weight: 600;
   transition: transform 0.2s, background-color 0.2s, border-color 0.3s;
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255,255,255,0.85);
   color: #111;
 }
 
 .skill-tag:hover {
-  background-color: #00C1D4; /* teal hover */
+  background-color: #00C1D4;
   color: #fff;
   border-color: #00C1D4;
   transform: scale(1.05);
@@ -143,7 +142,7 @@ h2 {
   gap: 1.5rem;
 }
 
-/* Project Card - keep black/dark grey */
+/* Project Card - perfect squares, dark grey/black */
 .project-card {
   border: 2px solid #111;
   border-radius: 12px;
@@ -151,10 +150,10 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 250px;
   background-color: #2A3439;
   color: rgba(255,255,255,0.9);
   transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  aspect-ratio: 1 / 1; /* perfect square */
 }
 
 .project-card h3,
@@ -165,13 +164,13 @@ h2 {
 .project-links a {
   margin-right: 1rem;
   font-weight: 600;
-  border-bottom: 2px solid #FF6600; /* orange link */
+  border-bottom: 2px solid #FF6600;
   color: #FF6600;
 }
 
 .project-links a:hover {
   border-color: #00C1D4;
-  color: #00C1D4; /* hover teal */
+  color: #00C1D4;
 }
 
 .project-card:hover {
@@ -185,14 +184,14 @@ h2 {
   margin-top: 1rem;
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
-  background-color: #FF6600; /* base orange */
+  background-color: #FF6600;
   color: rgba(255,255,255,0.95);
   font-weight: 700;
   transition: transform 0.2s, background-color 0.2s;
 }
 
 .contact-button:hover {
-  background-color: #00C1D4; /* teal hover */
+  background-color: #00C1D4;
   transform: scale(1.05);
 }
 
@@ -202,13 +201,13 @@ h2 {
   border-top: 2px solid #111;
   text-align: center;
   font-size: 0.9rem;
-  background-color: rgba(255,255,255,0.95);
+  background-color: rgba(255,255,255,0.85);
 }
 
 /* Blinking Cursor */
 .blinking-cursor {
   font-weight: 400;
-  color: #FF6600; /* accent color orange */
+  color: #FF6600;
   animation: blink 1s step-end infinite;
 }
 
