@@ -144,7 +144,7 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
   height: 250px; /* roughly square */
-  background-color: #8D918D; /* dark grey / black background */
+  background-color: #2A3439; /* dark grey / black background */
   color: #fff; /* text color for readability */
   transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
