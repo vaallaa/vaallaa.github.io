@@ -1,0 +1,162 @@
+/* Base */
+body {
+  margin: 0;
+  font-family: "Space Grotesk", Arial, sans-serif;
+  background: #0d0d0d;
+  color: #f2f2f2;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+a {
+  color: #00b8d9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff6b35;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff6b35;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #000000 40%, #1a1a1a);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #bbb;
+}
+
+/* Glitch effect */
+.glitch {
+  position: relative;
+  color: #fff;
+  font-size: 3rem;
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px #00b8d9, -2px -2px #ff6b35; }
+  20% { text-shadow: -2px -2px #00b8d9, 2px 2px #ff6b35; }
+  40% { text-shadow: 2px -2px #00b8d9, -2px 2px #ff6b35; }
+  60% { text-shadow: -2px 2px #00b8d9, 2px -2px #ff6b35; }
+  80% { text-shadow: 2px 2px #00b8d9, -2px -2px #ff6b35; }
+  100% { text-shadow: -2px -2px #00b8d9, 2px 2px #ff6b35; }
+}
+
+/* Projects Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 107, 53, 0.1);
+  border: 1px solid #ff6b35;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Photography */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.photo {
+  background: #333;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  border-radius: 10px;
+  border: 1px solid #444;
+}
+
+.placeholder {
+  margin-top: 1rem;
+  text-align: center;
+  color: #666;
+}
+
+/* Contact */
+#contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+#contact li {
+  margin: 0.5rem 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #111;
+  color: #555;
+}
