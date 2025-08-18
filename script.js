@@ -8,35 +8,37 @@ document.addEventListener('DOMContentLoaded', function() {
         
         function typeWriter() {
             if (i < text.length) {
-                titleElement.innerHTML += text.charAt(i);
+                const span = document.createElement('span');
+                span.textContent = text.charAt(i);
+                span.style.opacity = '0';
+                titleElement.appendChild(span);
+
+                // Fade-in animation
+                setTimeout(() => {
+                    span.style.transition = 'opacity 0.3s';
+                    span.style.opacity = '1';
+                }, 10);
+
                 i++;
-                // Adjust typing speed here (in milliseconds)
-                setTimeout(typeWriter, 100); 
+                setTimeout(typeWriter, 100);
             } else {
-                // Add a blinking cursor at the end
-                titleElement.innerHTML += '<span class="blinking-cursor">_</span>';
+                const cursor = document.createElement('span');
+                cursor.className = 'blinking-cursor';
+                cursor.textContent = '_';
+                titleElement.appendChild(cursor);
             }
         }
         
         typeWriter();
     }
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            document.querySelector(link.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 });
-
-// Adding the CSS for the blinking cursor dynamically
-const style = document.createElement('style');
-style.innerHTML = `
-.blinking-cursor {
-    font-weight: 400;
-    animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-    from, to {
-        color: transparent;
-    }
-    50% {
-        color: white;
-    }
-}
-`;
-document.head.appendChild(style);
