@@ -1,72 +1,108 @@
-/* Base */
-body {
+/* ========== BASE ========== */
+:root {
+  --bg: #fafafa;
+  --text: #111;
+  --subtext: #444;
+  --accent: #ff6b35; /* Teenage Engineering orange */
+}
+
+* {
   margin: 0;
-  font-family: 'Press Start 2P', cursive;
-  background: #ffffff; /* pure white */
-  color: #111;
-  line-height: 1.6;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 16px;
 }
 
 h1, h2, h3 {
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--subtext);
+  font-weight: 400;
 }
 
 .section {
-  padding: 4rem 2rem;
-  max-width: 1100px;
+  padding: 6rem 2rem;
+  max-width: 1000px;
   margin: 0 auto;
+  border-bottom: 1px solid #eaeaea;
 }
 
 a {
-  color: #00b8d9; /* blue accent */
+  color: var(--text);
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 a:hover {
-  color: #ff6b35; /* orange accent */
+  color: var(--accent);
 }
 
-/* Navbar */
+/* ========== NAVBAR ========== */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(250, 250, 250, 0.95);
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  gap: 3rem;
   z-index: 10;
-  border-bottom: 2px solid #eee;
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+  border-bottom: 1px solid #ddd;
 }
 
 .logo {
-  font-size: 1.2rem;
-  color: #ff6b35;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+  text-decoration: none; /* removes underline */
+  cursor: pointer;       /* makes it feel clickable */
+}
+
+.logo:hover {
+  color: var(--text); /* optional subtle hover effect */
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .nav-links a {
-  font-size: 0.7rem;
-  transition: 0.3s;
+  font-size: 0.9rem;
+  position: relative;
 }
 
-.nav-links a:hover {
-  color: #00b8d9;
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
 }
 
-/* Hero */
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ========== HERO ========== */
 .hero {
   height: 100vh;
   display: flex;
@@ -74,24 +110,34 @@ a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: #ffffff;
+  background: var(--bg);
 }
 
 .hero h1 {
-  font-size: 1.5rem;
-  color: #111;
+  font-size: 2.5rem;
+  color: var(--text);
   margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 0.8rem;
-  color: #333;
+  font-size: 1.1rem;
+  color: var(--subtext);
 }
 
-/* Typewriter */
+.hero {
+  background: #312f2f; /* near black */
+  color: #fff;
+}
+
+.hero h1, .hero p {
+  color: #fff;
+}
+
+
+/* Typewriter effect */
 .typewriter, .typewriter-sub {
   overflow: hidden;
-  border-right: .15em solid #ff6b35;
+  border-right: .15em solid var(--accent);
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: .05em;
@@ -110,66 +156,108 @@ a:hover {
 
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #ff6b35 }
+  50% { border-color: var(--accent) }
 }
 
-/* Projects Grid */
+/* ========== PROJECTS GRID ========== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
 .card {
   background: #fff;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 12px;
-  border: 2px solid #ddd;
-  transition: transform 0.3s, border 0.3s;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  border: 2px solid #00b8d9;
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
+
 
 /* Section Titles */
 .accent {
-  color: #ff6b35;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
   margin-bottom: 2rem;
+  display: block;
 }
 
-/* Skills */
+/* ========== SKILLS GRID ========== */
 .skills-grid {
   display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.skills-grid h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Pill Stack */
+.pill-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.pill {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.06);
+}
+
+/* ========== PHOTOGRAPHY GRID ========== */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
 }
 
-/* Photography */
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-}
-
 .photo {
-  background: #f9f9f9;
-  height: 150px;
+  background: #fff;
+  height: 180px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #444;
-  border-radius: 10px;
-  border: 2px dashed #00b8d9;
+  color: var(--subtext);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.placeholder {
-  margin-top: 1rem;
-  text-align: center;
-  color: #888;
+.photo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-/* Contact */
+/* ========== CONTACT ========== */
 #contact ul {
   list-style: none;
   padding: 0;
@@ -179,10 +267,18 @@ a:hover {
   margin: 0.5rem 0;
 }
 
-/* Footer */
+#contact a {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* ========== FOOTER ========== */
 footer {
   text-align: center;
-  padding: 1rem;
-  background: #f9f9f9;
-  color: #555;
+  padding: 2rem;
+  background: #f0f0f0;
+  color: #777;
+  font-size: 0.85rem;
 }
+
+
