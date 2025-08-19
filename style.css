@@ -1,188 +1,186 @@
 /* Base */
 body {
   margin: 0;
-  font-family: 'Orbitron', Arial, sans-serif; /* more legible */
+  font-family: 'Orbitron', Arial, sans-serif;
   background: #ffffff;
   color: #111;
   line-height: 1.6;
-}
-
-h1, h2, h3 {
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.section {
-  padding: 4rem 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-a {
-  color: #00b8d9; /* blue accent */
-  text-decoration: none;
-}
-
-a:hover {
-  color: #ff6b35; /* orange accent */
+  scroll-behavior: smooth;
 }
 
 /* Navbar */
 .navbar {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.95);
-  display: flex;
-  align-items: center;
-  z-index: 10;
-  border-bottom: 2px solid #eee;
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  z-index: 1000;
 }
 
 .logo {
-  font-size: 1.2rem;
-  color: #ff6b35;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-right: 1rem;
+  color: #111;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
+.nav-links li {
+  margin: 0 0.5rem;
+}
+
+/* Orange oval buttons */
 .nav-links a {
-  font-size: 0.7rem;
-  transition: 0.3s;
+  text-decoration: none;
+  color: orange;
+  border: 2px solid orange;
+  padding: 0.4rem 1rem;
+  border-radius: 999px; /* pill shape */
+  transition: all 0.3s ease;
+  font-weight: 600;
 }
 
 .nav-links a:hover {
-  color: #00b8d9;
+  background: teal;
+  color: white;
+  border-color: teal;
 }
 
-/* Hero */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* Hero / header section */
+header {
   text-align: center;
+  padding: 8rem 2rem 4rem;
   background: #ffffff;
 }
 
-.hero h1 {
-  font-size: 1.5rem;
-  color: #111;
+header h1 {
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
-.hero p {
-  font-size: 0.8rem;
+header p {
+  font-size: 1.2rem;
   color: #333;
 }
 
-/* Typewriter */
-.typewriter, .typewriter-sub {
-  overflow: hidden;
-  border-right: .15em solid #ff6b35;
-  white-space: nowrap;
+/* Section styling */
+section {
+  padding: 4rem 2rem;
+  max-width: 900px;
   margin: 0 auto;
-  letter-spacing: .05em;
-  animation: typing 3s steps(30, end), blink-caret .7s step-end infinite;
 }
 
-.typewriter-sub {
-  animation-delay: 3.2s;
-  border-right: .15em solid #00b8d9;
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #111;
+  border-bottom: 2px solid orange;
+  display: inline-block;
+  padding-bottom: 0.3rem;
 }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+/* Skills section */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: #ff6b35 }
+.skill {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Projects Grid */
-.grid {
+.skill:hover {
+  background: orange;
+  color: #fff;
+}
+
+/* Projects grid */
+.projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
 }
 
-.card {
+.project-card {
   background: #fff;
+  border: 2px solid #eee;
+  border-radius: 1rem;
   padding: 1.5rem;
-  border-radius: 12px;
-  border: 2px solid #ddd;
-  transition: transform 0.3s, border 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  border: 2px solid #00b8d9;
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
-/* Section Titles */
-.accent {
-  color: #ff6b35;
-  margin-bottom: 2rem;
+.project-card h3 {
+  margin-top: 0;
+  color: teal;
 }
 
-/* Skills */
-.skills-grid {
-  display: grid;
-  gap: 1.5rem;
+.project-card p {
+  font-size: 0.95rem;
+  color: #444;
 }
 
-/* Photography */
+/* Photography gallery */
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
 }
 
-.photo {
-  background: #f9f9f9;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #444;
-  border-radius: 10px;
-  border: 2px dashed #00b8d9;
+.photo-grid img {
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.placeholder {
-  margin-top: 1rem;
+.photo-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Contact section */
+.contact-info {
   text-align: center;
-  color: #888;
+  font-size: 1.1rem;
 }
 
-/* Contact */
-#contact ul {
-  list-style: none;
-  padding: 0;
+.contact-info a {
+  color: teal;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-#contact li {
-  margin: 0.5rem 0;
+.contact-info a:hover {
+  color: orange;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
   background: #f9f9f9;
+  font-size: 0.9rem;
   color: #555;
 }
